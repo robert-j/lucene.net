@@ -29,6 +29,7 @@
 	 	<HighlighterBinFolder>$(BinFolder)\contrib\Highlighter\$(Configuration)</HighlighterBinFolder>
 	 	<QueriesBinFolder>$(BinFolder)\contrib\Queries\$(Configuration)</QueriesBinFolder>
 	 	<RegexBinFolder>$(BinFolder)\contrib\Regex\$(Configuration)</RegexBinFolder>
+		<SimilarityBinFolder>$(BinFolder)\contrib\Similarity\$(Configuration)</SimilarityBinFolder>
 	 	<SimpleFacetedSearchBinFolder>$(BinFolder)\contrib\SimpleFacetedSearch\$(Configuration)</SimpleFacetedSearchBinFolder>	
 	 	<SnowballBinFolder>$(BinFolder)\contrib\Snowball\$(Configuration)</SnowballBinFolder>	
 	 	<SpatialBinFolder>$(BinFolder)\contrib\Spatial\$(Configuration)</SpatialBinFolder>
@@ -47,6 +48,7 @@
 		<ProjectFiles Include="$(SourceFolder)\Contrib\Snowball\*.csproj" />
 		<ProjectFiles Include="$(SourceFolder)\Contrib\Spatial\*.csproj" />
 		<ProjectFiles Include="$(SourceFolder)\Contrib\SpellChecker\*.csproj" />
+		<ProjectFiles Include="$(SourceFolder)\Contrib\Similarity\*.csproj" />
 		
 		
 	
@@ -73,6 +75,7 @@
 		<CleanFiles Include="$(SnowballBinFolder)\*.*" />
 		<CleanFiles Include="$(SpatialBinFolder)\*.*" />
 		<CleanFiles Include="$(SpellCheckerBinFolder)\*.*" />
+		<CleanFiles Include="$(SimilarityBinFolder)\*.*" />
 		
 		<!-- Test Files -->
 		<TestFiles Include="$(AnalyzersBinFolder)\*.Test.dll" />
@@ -87,38 +90,39 @@
 		<TestFiles Include="$(SpellCheckerBinFolder)\*.Test.dll" />
 		
 		<!-- Release Files -->
-		<ReleaseFiles Include="$(AnalyzersBinFolder)\Lucene.Net.Analyzers.dll" />
-		<ReleaseFiles Include="$(AnalyzersBinFolder)\Lucene.Net.Analyzers.XML" Condition="Exists('$(AnalyzersBinFolder)\Lucene.Net.Analyzers.XML')" />
+		<ReleaseFiles Include="$(AnalyzersBinFolder)\Lucene.Net.Contrib.Analyzers.dll" />
+		<ReleaseFiles Include="$(AnalyzersBinFolder)\Lucene.Net.Contrib.Analyzers.XML" Condition="Exists('$(AnalyzersBinFolder)\Lucene.Net.Contrib.Analyzers.XML')" />
 		<ReleaseFiles Include="$(CoreContribBinFolder)\Lucene.Net.Contrib.Core.dll" />
 		<ReleaseFiles Include="$(CoreContribBinFolder)\Lucene.Net.Contrib.Core.XML" Condition="Exists('$(CoreContribBinFolder)\Lucene.Net.Contrib.Core.XML')" />
-		<ReleaseFiles Include="$(FastVectorHighlighterBinFolder)\Lucene.Net.FastVectorHighlighter.dll" />
-		<ReleaseFiles Include="$(FastVectorHighlighterBinFolder)\Lucene.Net.FastVectorHighlighter.XML" Condition="Exists('$(FastVectorHighlighterBinFolder)\Lucene.Net.FastVectorHighlighter.XML')" />
-		<ReleaseFiles Include="$(HighlighterBinFolder)\Lucene.Net.Highlighter.dll" />
-		<ReleaseFiles Include="$(HighlighterBinFolder)\Lucene.Net.Highlighter.XML" Condition="Exists('$(HighlighterBinFolder)\Lucene.Net.Highlighter.XML')" />
-		<ReleaseFiles Include="$(QueriesBinFolder)\Lucene.Net.Queries.dll" />
-		<ReleaseFiles Include="$(QueriesBinFolder)\Lucene.Net.Queries.XML" Condition="Exists('$(QueriesBinFolder)\Lucene.Net.Queries.XML')" />
-		<ReleaseFiles Include="$(RegexBinFolder)\Lucene.Net.Search.Regex.dll" />
-		<ReleaseFiles Include="$(RegexBinFolder)\Lucene.Net.Search.Regex.XML" Condition="Exists('$(RegexBinFolder)\Lucene.Net.Search.Regex.XML')" />
-		<ReleaseFiles Include="$(SimpleFacetedSearchBinFolder)\Lucene.Net.Search.SimpleFacetedSearch.dll" />
-		<ReleaseFiles Include="$(SimpleFacetedSearchBinFolder)\Lucene.Net.Search.SimpleFacetedSearch.XML" Condition="Exists('$(SimpleFacetedSearchFolder)\Lucene.Net.Search.SimpleFacetedSearch.XML')" />
-		<ReleaseFiles Include="$(SnowballBinFolder)\Lucene.Net.Snowball.dll" />
-		<ReleaseFiles Include="$(SnowballBinFolder)\Lucene.Net.Snowball.XML" Condition="Exists('$(SnowballBinFolder)\Lucene.Net.Snowball.XML')" />
-		<ReleaseFiles Include="$(SpatialBinFolder)\Lucene.Net.Spatial.dll" />
-		<ReleaseFiles Include="$(SpatialBinFolder)\Lucene.Net.Spatial.XML"  Condition="Exists('$(SpatialBinFolder)\Lucene.Net.Spatial.XML')" />
-		<ReleaseFiles Include="$(SpellCheckerBinFolder)\Lucene.Net.SpellChecker.dll" />
-		<ReleaseFiles Include="$(SpellCheckerBinFolder)\Lucene.Net.SpellChecker.XML" Condition="Exists('$(SpellCheckerBinFolder)\Lucene.Net.SpellChecker.XML')" />
+		<ReleaseFiles Include="$(FastVectorHighlighterBinFolder)\Lucene.Net.Contrib.FastVectorHighlighter.dll" />
+		<ReleaseFiles Include="$(FastVectorHighlighterBinFolder)\Lucene.Net.Contrib.FastVectorHighlighter.XML" Condition="Exists('$(FastVectorHighlighterBinFolder)\Lucene.Net.Contrib.FastVectorHighlighter.XML')" />
+		<ReleaseFiles Include="$(HighlighterBinFolder)\Lucene.Net.Contrib.Highlighter.dll" />
+		<ReleaseFiles Include="$(HighlighterBinFolder)\Lucene.Net.Contrib.Highlighter.XML" Condition="Exists('$(HighlighterBinFolder)\Lucene.Net.Contrib.Highlighter.XML')" />
+		<ReleaseFiles Include="$(QueriesBinFolder)\Lucene.Net.Contrib.Queries.dll" />
+		<ReleaseFiles Include="$(QueriesBinFolder)\Lucene.Net.Contrib.Queries.XML" Condition="Exists('$(QueriesBinFolder)\Lucene.Net.Contrib.Queries.XML')" />
+		<ReleaseFiles Include="$(RegexBinFolder)\Lucene.Net.Contrib.Regex.dll" />
+		<ReleaseFiles Include="$(RegexBinFolder)\Lucene.Net.Contrib.Regex.XML" Condition="Exists('$(RegexBinFolder)\Lucene.Net.Contrib.Regex.XML')" />
+		<ReleaseFiles Include="$(SimpleFacetedSearchBinFolder)\Lucene.Net.Contrib.Search.SimpleFacetedSearch.dll" />
+		<ReleaseFiles Include="$(SimpleFacetedSearchBinFolder)\Lucene.Net.Contrib.Search.SimpleFacetedSearch.XML" Condition="Exists('$(SimpleFacetedSearchFolder)\Lucene.Net.Contrib.Search.SimpleFacetedSearch.XML')" />
+		<ReleaseFiles Include="$(SnowballBinFolder)\Lucene.Net.Contrib.Snowball.dll" />
+		<ReleaseFiles Include="$(SnowballBinFolder)\Lucene.Net.Contrib.Snowball.XML" Condition="Exists('$(SnowballBinFolder)\Lucene.Net.Contrib.Snowball.XML')" />
+		<ReleaseFiles Include="$(SpatialBinFolder)\Lucene.Net.Contrib.Spatial.dll" />
+		<ReleaseFiles Include="$(SpatialBinFolder)\Lucene.Net.Contrib.Spatial.XML"  Condition="Exists('$(SpatialBinFolder)\Lucene.Net.Contrib.Spatial.XML')" />
+		<ReleaseFiles Include="$(SpellCheckerBinFolder)\Lucene.Net.Contrib.SpellChecker.dll" />
+		<ReleaseFiles Include="$(SpellCheckerBinFolder)\Lucene.Net.Contrib.SpellChecker.XML" Condition="Exists('$(SpellCheckerBinFolder)\Lucene.Net.Contrib.SpellChecker.XML')" />
+		<ReleaseFiles Include="$(SimilarityBinFolder)\Lucene.Net.Contrib.Similarity.dll" />
 
 		<!-- Analysis Files -->
-		<AnalysisFiles Include="$(AnalyzersBinFolder)\Lucene.Net.Analyzers.dll" />
-		<AnalysisFiles Include="$(CoreContribBinFolder)\Lucene.Net.Contrib.Core.dll" />
-		<AnalysisFiles Include="$(FastVectorHighlighterBinFolder)\Lucene.Net.FastVectorHighlighter.dll" />
-		<AnalysisFiles Include="$(HighlighterBinFolder)\Lucene.Net.Highlighter.dll" />
-		<AnalysisFiles Include="$(QueriesBinFolder)\Lucene.Net.Queries.dll" />
-		<AnalysisFiles Include="$(RegexBinFolder)\Lucene.Net.Search.Regex.dll" />
-		<AnalysisFiles Include="$(SimpleFacetedSearchBinFolder)\Lucene.Net.Search.SimpleFacetedSearch.dll" />
-		<AnalysisFiles Include="$(SnowballBinFolder)\Lucene.Net.Snowball.dll" />
-		<AnalysisFiles Include="$(SpatialBinFolder)\Lucene.Net.Spatial.dll" />
-		<AnalysisFiles Include="$(SpellCheckerBinFolder)\Lucene.Net.SpellChecker.dll" />
+		<AnalysisFiles Include="$(AnalyzersBinFolder)\Lucene.Net.Contrib.Analyzers.dll" />
+		<AnalysisFiles Include="$(CoreContribBinFolder)\Lucene.Net.Contrib.Contrib.Core.dll" />
+		<AnalysisFiles Include="$(FastVectorHighlighterBinFolder)\Lucene.Net.Contrib.FastVectorHighlighter.dll" />
+		<AnalysisFiles Include="$(HighlighterBinFolder)\Lucene.Net.Contrib.Highlighter.dll" />
+		<AnalysisFiles Include="$(QueriesBinFolder)\Lucene.Net.Contrib.Queries.dll" />
+		<AnalysisFiles Include="$(RegexBinFolder)\Lucene.Net.Contrib.Regex.dll" />
+		<AnalysisFiles Include="$(SimpleFacetedSearchBinFolder)\Lucene.Net.Contrib.Search.SimpleFacetedSearch.dll" />
+		<AnalysisFiles Include="$(SnowballBinFolder)\Lucene.Net.Contrib.Snowball.dll" />
+		<AnalysisFiles Include="$(SpatialBinFolder)\Lucene.Net.Contrib.Spatial.dll" />
+		<AnalysisFiles Include="$(SpellCheckerBinFolder)\Lucene.Net.Contrib.SpellChecker.dll" />
 
 		<!-- Assemblies To Test -->
 		<PathTargets Include="paths-lucene" />
