@@ -18,7 +18,7 @@ using System;
 namespace SF.Snowball
 {
 	
-	public class SnowballProgram
+	public abstract class SnowballProgram
 	{
 		/// <summary> Get the current string.</summary>
 		virtual public System.String GetCurrent()
@@ -475,7 +475,9 @@ namespace SF.Snowball
             s.Append(current.ToString(0, limit));
 			return s;
 		}
-		
+
+        public abstract bool Stem();
+
 		/*
 		extern void debug(struct SN_env * z, int number, int line_count)
 		{   int i;

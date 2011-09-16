@@ -363,7 +363,7 @@ lab1_brk: ;
 			return true;
 		}
 		
-		public virtual bool Stem()
+		public override bool Stem()
 		{
 			int v_1;
 			int v_2;
