@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Lucene.Net.Search.SimpleFacetedSearch</RootNamespace>
-    <AssemblyName>Lucene.Net.Search.SimpleFacetedSearch</AssemblyName>
+    <AssemblyName>Lucene.Net.Contrib.Search.SimpleFacetedSearch</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>618</NoWarn>
-    <DocumentationFile>..\..\..\build\bin\contrib\SimpleFacetedSearch\Release\Lucene.Net.Search.SimpleFacetedSearch.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\build\bin\contrib\SimpleFacetedSearch\Release\Lucene.Net.Contrib.Search.SimpleFacetedSearch.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
