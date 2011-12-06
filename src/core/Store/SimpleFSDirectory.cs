@@ -20,12 +20,12 @@ using System;
 namespace Lucene.Net.Store
 {
 	
-	/// <summary>A straightforward implementation of {@link FSDirectory}
+	/// <summary>A straightforward implementation of <see cref="FSDirectory" />
 	/// using java.io.RandomAccessFile.  However, this class has
 	/// poor concurrent performance (multiple threads will
 	/// bottleneck) as it synchronizes when multiple threads
 	/// read from the same file.  It's usually better to use
-	/// {@link NIOFSDirectory} or {@link MMapDirectory} instead. 
+	/// <see cref="NIOFSDirectory" /> or <see cref="MMapDirectory" /> instead. 
 	/// </summary>
 	public class SimpleFSDirectory:FSDirectory
 	{
@@ -95,7 +95,22 @@ namespace Lucene.Net.Store
 		public override IndexInput OpenInput(System.String name, int bufferSize)
 		{
 			EnsureOpen();
-			return new SimpleFSIndexInput(new System.IO.FileInfo(System.IO.Path.Combine(directory.FullName, name)), bufferSize, GetReadChunkSize());
+
+		    Exception e = null;
+		    for (int i = 0; i < 10; i++)
+		    {
+		        try
+		        {
+                    return new SimpleFSIndexInput(new System.IO.FileInfo(System.IO.Path.Combine(directory.FullName, name)), bufferSize, GetReadChunkSize());
+		        }
+		        catch (System.UnauthorizedAccessException ex)
+		        {
+		            e = ex;
+                    System.Threading.Thread.Sleep(1);
+		        }
+		    }
+
+		    throw e;
 		}
 		
 		public /*protected internal*/class SimpleFSIndexInput:BufferedIndexInput, System.ICloneable

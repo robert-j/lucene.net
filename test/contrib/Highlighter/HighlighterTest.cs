@@ -837,7 +837,6 @@ namespace Lucene.Net.Search.Highlight
 		public virtual void  DoSearching(System.String queryString)
 		{
 			QueryParser parser = new QueryParser(FIELD_NAME, new StandardAnalyzer());
-			parser.SetMultiTermRewriteMethod(MultiTermQuery.SCORING_BOOLEAN_QUERY_REWRITE);
 			query = parser.Parse(queryString);
 			DoSearching(query);
 		}

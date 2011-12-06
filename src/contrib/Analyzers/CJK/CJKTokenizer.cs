@@ -1,3 +1,24 @@
+/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+*/
+
 using System;
 using System.IO;
 using System.Text;
@@ -63,10 +84,10 @@ namespace Lucene.Net.Analysis.CJK
 	/// <p>
 	/// CJKTokenizer was modified from StopTokenizer which does a decent job for
 	/// most European languages. and it perferm other token method for double-byte
-	/// Characters: the token will return at each two charactors with overlap match.<br>
+	/// Characters: the token will return at each two charactors with overlap match.<br/>
 	/// Example: "java C1C2C3C4" will be segment to: "java" "C1C2" "C2C3" "C3C4" it
-	/// also need filter filter zero length token ""<br>
-	/// for Digit: digit, '+', '#' will token as letter<br>
+	/// also need filter filter zero length token ""<br/>
+	/// for Digit: digit, '+', '#' will token as letter<br/>
 	/// for more info on Asia language(Chinese Japanese Korean) text segmentation:
 	/// please search  <a
 	/// href="http://www.google.com/search?q=word+chinese+segment">google</a>
@@ -107,13 +128,13 @@ namespace Lucene.Net.Analysis.CJK
 		private int dataLen = 0;
 
 		/// <summary>
-		/// character buffer, store the characters which are used to compose <br>
+		/// character buffer, store the characters which are used to compose <br/>
 		/// the returned Token
 		/// </summary>
 		private char[] buffer = new char[MAX_WORD_LEN];
 
 		/// <summary>
-		/// I/O buffer, used to store the content of the input(one of the <br>
+		/// I/O buffer, used to store the content of the input(one of the <br/>
 		/// members of Tokenizer)
 		/// </summary>
 		private char[] ioBuffer = new char[IO_BUFFER_SIZE];
@@ -216,14 +237,14 @@ namespace Lucene.Net.Analysis.CJK
 					{
 						if (length == 0) 
 						{
-							// "javaC1C2C3C4linux" <br>
+							// "javaC1C2C3C4linux" <br/>
 							//      ^--: the current character begin to token the ASCII
 							// letter
 							start = offset - 1;
 						} 
 						else if (tokenType == "double") 
 						{
-							// "javaC1C2C3C4linux" <br>
+							// "javaC1C2C3C4linux" <br/>
 							//              ^--: the previous non-ASCII
 							// : the current character
 							offset--;
