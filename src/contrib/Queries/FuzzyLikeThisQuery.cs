@@ -18,7 +18,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 
 using Lucene.Net.Search;
@@ -89,7 +89,7 @@ namespace Lucene.Net.Search
                 if (other.fieldVals != null)
                     return false;
             }
-            else if (!fieldVals.EqualsToArrayList(other.fieldVals))
+            else if (!Extensions.EqualsToArrayList(fieldVals, other.fieldVals))
                 return false;
             if (ignoreTF != other.ignoreTF)
                 return false;

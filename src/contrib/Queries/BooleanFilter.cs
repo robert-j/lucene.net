@@ -17,7 +17,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 
 using Lucene.Net.Index;
@@ -274,7 +274,7 @@ namespace Lucene.Net.Search
         {
             if (filters != null)
             {
-                for (int i = 0; i < filters.Count(); i++)
+                for (int i = 0; i < filters.Count; i++)
                 {
                     buffer.Append(' ');
                     buffer.Append(occurString);

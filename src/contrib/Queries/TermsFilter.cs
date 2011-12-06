@@ -17,7 +17,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 
 using Lucene.Net.Index;
@@ -33,7 +33,7 @@ namespace Lucene.Net.Search
         /// <summary>
         /// The set of terms for this filter.
         /// </summary>
-        protected HashSet<Term> terms = new HashSet<Term>();
+        protected Dictionary<Term, object> terms = new Dictionary<Term, object>();
 
         /// <summary>
         /// Add a term to the set.
@@ -41,7 +41,7 @@ namespace Lucene.Net.Search
         /// <param name="term">The term to add.</param>
         public void AddTerm(Term term)
         {
-            terms.Add(term);
+		terms.Add(term, null);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Lucene.Net.Search
             TermDocs td = reader.TermDocs();
             try
             {
-                foreach (Term t in this.terms)
+                foreach (Term t in this.terms.Keys)
                 {
                     td.Seek(t);
                     while (td.Next())
@@ -89,7 +89,7 @@ namespace Lucene.Net.Search
         public override int GetHashCode()
         {
             int hash = 9;
-            foreach (Term t in this.terms)
+            foreach (Term t in this.terms.Keys)
             {
                 hash = 31 * hash + t.GetHashCode();
             }
@@ -100,7 +100,7 @@ namespace Lucene.Net.Search
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("(");
-            foreach (Term t in this.terms)
+            foreach (Term t in this.terms.Keys)
             {
                 sb.AppendFormat(" {0}:{1}", t.Field(), t.Text());
             }
