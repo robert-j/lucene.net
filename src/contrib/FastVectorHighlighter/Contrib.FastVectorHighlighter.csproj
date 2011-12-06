@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Lucene.Net.Search.Vectorhighlight</RootNamespace>
-    <AssemblyName>Lucene.Net.FastVectorHighlighter</AssemblyName>
+    <AssemblyName>Lucene.Net.Contrib.FastVectorHighlighter</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -51,7 +51,7 @@
     <DefineConstants>TRACE;LUCENENET_350</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\build\bin\contrib\FastVectorHighlighter\Release\Lucene.Net.FastVectorHighlighter.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\build\bin\contrib\FastVectorHighlighter\Release\Lucene.Net.Contrib.FastVectorHighlighter.XML</DocumentationFile>
     <NoWarn>618</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
