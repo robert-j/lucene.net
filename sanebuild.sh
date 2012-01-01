@@ -10,6 +10,7 @@ OUTPUT_DIR="build/bin"
 OUTPUT_EXTENSIONS="dll pdb XML"
 
 SOLUTIONS="core/Lucene.Net.Core \
+    contrib/Contrib.Analyzers \
     contrib/Contrib.SpellChecker \
     contrib/Contrib.Queries \
     contrib/Contrib.Snowball \
